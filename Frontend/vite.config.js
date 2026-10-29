@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-const API_TARGET = process.env.VITE_API_PROXY || 'http://localhost:5000';
+const API_TARGET = process.env.VITE_API_PROXY || 'https://ai-ebookcreator-4d0s.onrender.com';
 
 export default defineConfig({
   plugins: [react()],
