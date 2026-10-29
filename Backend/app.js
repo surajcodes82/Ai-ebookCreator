@@ -13,7 +13,8 @@ const { notFound, errorHandler } = require('./middleware/error');
 
 const app = express();
 
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173,http://127.0.0.1:5173')
+const configuredOrigins = process.env.CLIENT_URL || 'http://localhost:5173,http://127.0.0.1:5173';
+const allowedOrigins = `${configuredOrigins},https://ai-ebook-creator-chi.vercel.app`
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
