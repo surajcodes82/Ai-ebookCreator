@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-export const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+const configuredApiUrl = import.meta.env.VITE_API_URL;
+const productionApiUrl = 'https://ai-ebookcreator-4d0s.onrender.com';
+
+export const API_BASE = (configuredApiUrl || (import.meta.env.PROD ? productionApiUrl : '')).replace(/\/$/, '');
 export const TOKEN_KEY = 'aiec.token';
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY) || '';
